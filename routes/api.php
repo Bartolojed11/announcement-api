@@ -39,6 +39,7 @@ Route::prefix('admin')->group(function () {
     //CORS NOT WORKING CORRECTLY. JUST A WORKAROUND
     Route::post('/announcements/update/{announcement}', [AdminAnnouncementController::class, 'update']);
     Route::post('/announcements/delete/{announcement}', [AdminAnnouncementController::class, 'destroy']);
+    Route::post('/announcements/store', [AdminAnnouncementController::class, 'store']);
 
     Route::apiResource('/announcements', AdminAnnouncementController::class);
     Route::post('/logout', [AuthController::class, 'logout']);

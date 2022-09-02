@@ -42,7 +42,7 @@ class Announcement extends Model
      */
     public function scopeActiveAnnouncements($query)
     {
-        $now =  Carbon::now()->format('Y-m-d H:i:s');
+        $now =  Carbon::now()->timezone('Asia/Manila')->format('Y-m-d H:i:s');
 
         return $query->where(function ($q) use ($now) {
             $q->where('endDate', null)
